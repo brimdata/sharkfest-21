@@ -98,14 +98,14 @@ Our audacious goal: _Zed will do for data lakes what JSON did for APIs._
 
 ## Zed & Brim
 
-Zed and Brim have become our _research vehicle_ for exploring the data model..
+Zed and Brim have become our _research vehicle_ for exploring the data model.
 
 * Zed & Brim are open source (BSD license)
     * [github.com/brimdata/brim](https://github.com/brimdata/brim)
     * [github.com/brimdata/zed](https://github.com/brimdata/zed)
 * Search-like experience optimized for Zeek and Suricata
     * [Zeek](https://zeek.org/) - maps packets to contextual logs
-    * [Suricata](https://suricata.io/) - threat detections engine
+    * [Suricata](https://suricata.io/) - threat detection engine
 * (quick demo of pcap drag into Brim)
 
 ![Brim App](fig/brim-grab.png)
@@ -114,7 +114,7 @@ Zed and Brim have become our _research vehicle_ for exploring the data model..
 
 While the PCAP is loading, here is the wiring behind the scenes...
 * Data organized into "pools" like Mongo _collections_
-* `brimcap` bundles integrations for Zeek and Suricata
+* [`brimcap`](https://github.com/brimdata/brimcap) bundles integrations for Zeek and Suricata
     * `brimcap` builds a PCAP index
     * `brimcap` loads processed logs into a Zed pool
 * Brim interacts with `brimcap` for click-to-packets
@@ -238,7 +238,7 @@ The Zeek log format is type-rich and structured:
 1521911721.411148	CXWfTK3LRdiuQxBbM6	10.47.25.80	50817 ...
 ```
 
-Elastic Common Schema (ECS) is a type-rich schema system:
+[Elastic Common Schema (ECS)](https://github.com/elastic/ecs) is a type-rich schema system:
 * data communicated as regular type-impoverished JSON
 * ingest pipelines map JSON to ECS objects
 
@@ -327,7 +327,7 @@ We'll use `zq` to take an input, do no processing, and display it
 in pretty-printed Zed.
 
 ```
-echo "..." | zq -Z -
+echo '{"hello": "world"}' | zq -Z -
 ```
 We leveraged the familiarity and simplicity of JSON:
 * Zed is a superset of JSON
@@ -336,7 +336,7 @@ We leveraged the familiarity and simplicity of JSON:
 ```
 echo '{"s":"hello","val":1,"a":[1,2],"b":true}' | zq -Z -
 ```
-Note the we drop the quotes from field names and use them only when necessary:
+Note that we drop the quotes from field names and use them only when necessary:
 ```
 echo '{"funny@name":1}' | zq -Z -
 ```
@@ -375,7 +375,7 @@ zq -Z values.zson
         v13: { a:1, r:{s1:"hello", s2:"world"}}
 }
 ```
-What we _don't do here_ is define a schema then fit the values into
+What we _don't do here_ is define a schema and then fit the values into
 the schema.
 * Data is always self describing.
 * No need to declare types explicitly.
@@ -487,7 +487,7 @@ SELECT name, sum(forecast) as forecast FROM deal GROUP BY name ORDER BY forecast
 SELECT name, union(forecast) as deals, sum(forecast) as total FROM deal GROUP BY name ORDER BY total DESC
 SELECT d.customer as customer, d.name AS name, e.phone as phone FROM deal d JOIN employee e ON d.name=e.name
 ```
-Note all the queries worked just fine with the junk in the way!
+Note all the queries worked just fine even with the junk in the way!
 
 This is because the _Zed type_ defines the table at query time (_policy_),
 and the data is not stored in a fixed-schema relational table (_mechanism_).
@@ -502,7 +502,7 @@ James, from our team, summarized it nicely:
 
 ## Schema Discovery
 
-With Zed, we can let the data in before we know it's shape.
+With Zed, we can let the data in before we know its shape.
 
 > Because data is "allowed in" without knowing its schema ahead of time,
 > you can use the very same system to explore and discover the "shapes" of
@@ -609,8 +609,8 @@ To this end, we end up with a format of families that all adhere to the Zed data
 model but emulate the efficiency of Avro and Parquet.
 
 * ZSON is like JSON
-* ZNG is record-based like Avro
-* ZST is columnar like Parquet
+* [ZNG](https://github.com/brimdata/zed/blob/main/docs/formats/zng.md) is record-based like Avro
+* [ZST](https://github.com/brimdata/zed/blob/main/docs/formats/zst.md) is columnar like Parquet
 
 But they all conform to the same Zed data model.
 
@@ -768,7 +768,7 @@ And you wanted to decorate your logs that had an IP in this list.
 First we put the badguys list in its own pool...
 ```
 zapi create BadGuys
-zapi use BagGuys@main
+zapi use BadGuys@main
 zapi load badguys.zson
 ```
 > (see BadGuys pool in app... it's like a toy threat intel feed.)
