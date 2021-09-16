@@ -1,4 +1,4 @@
-# The [Zed Project](https://github.com/brimdata/zed): Stumbling Upon a [New Data Model](https://github.com/brimdata/zed/blob/main/docs/formats/zson.md) while Hacking on Packets
+# The [Zed Project](https://github.com/brimdata/zed): Stumbling Upon a [New Data Model](https://github.com/brimdata/zed/blob/main/docs/formats/zson.md) while [Hacking on Packets](https://github.com/brimdata/brimcap)
 
 > This README comprises a presentation given by Steve McCanne at Sharkfest '21,
 > 8-9am on September 17, 2021.  You can reproduce all the examples
