@@ -98,7 +98,7 @@ Our audacious goal: _Zed will do for data lakes what JSON did for APIs._
 
 ## Zed & Brim
 
-Zed and Brim have been the driver for tackling the complexity of data engineering...
+Zed and Brim have become our _research vehicle_ for exploring the data model..
 
 * Zed & Brim are open source (BSD license)
     * [github.com/brimdata/brim](https://github.com/brimdata/brim)
@@ -294,7 +294,7 @@ What if _the mechanism_ were _self-describing data_:
     * instead of being constrained by a rigid set of schemas
 
 And what if _policy_ was enabled by the flexible Zed _type system_
-instead of rigid schemas?
+instead of relying on rigid schemas?
 
 Before we can explain how this will work, let's give a quick tour
 of the Zed data model.
@@ -811,11 +811,11 @@ A main/live branching model for streaming pipelines... work in progress.
 
 ## Summary
 
-* Showed our new app Brim
+* Showed you our new app Brim
 * Described the Zed data model underneath Brim that we stumbled upon while hacking PCAPs
 * Proposed that Zed can
     * unify the document and relational models
-    * elegantly separate the schema-policy from data-mechanism
+    * elegantly separate the schema-policy from the data-mechanism
     * be performant with its record- and columnar-based formats
 * Walked through how it all comes together in a Git-like Zed lake
 
@@ -823,13 +823,13 @@ We have a ways to go, but we hope someday that...
 
 ---
 
-**_Zed will do for data lakes what JSON did for to APIs._**
+**_Zed will do for data lakes what JSON did for APIs._**
 
 ---
 
 Do you buy it?  [Dimitri Does!](https://www.youtube.com/watch?v=hOQfp41nqp8)
 
-### Join in the fun!
+### Join in on the fun!
 
 If you're interested, please connect with us online
 
