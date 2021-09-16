@@ -502,13 +502,13 @@ James, from our team, summarized it nicely:
 
 ## Schema Discovery
 
-This separation principle is very powerful:
+With Zed, we can let the data in before we know it's shape.
 
 > Because data is "allowed in" without knowing its schema ahead of time,
 > you can use the very same system to explore and discover the "shapes" of
 > data (i.e., their schemas) before you've figured out how to clean it up.
 
-Zed's type system is a powerful mechanism here.
+Zed's type system is the key to introspection and "schema discovery".
 
 Key insight from Henri:
 > Because Zed types are also values, we can put a type anywhere a value
@@ -579,7 +579,7 @@ And here is an important insight:
 document model.
 * The two forms of data look nothing alike!
 
-## ZSON Efficiency
+## But ZSON is Slow
 
 Ok, this separation of policy and mechanism argument sounds great, but how can
 you make this ZSON text format efficient?
@@ -594,7 +594,9 @@ Of course ZSON can't compete.
 
 But maybe the Zed data model can!
 
-We simply need to steal the good ideas from Avro and Parquet...
+## Making Zed Fast
+
+Let's just borrow the good ideas from Avro and Parquet...
 * [Avro](https://avro.apache.org/) from the Hadoop ecosystem
 * [Parquet](https://parquet.apache.org/) from Google's [Dremel paper](https://research.google/pubs/pub36632/)
 
@@ -632,6 +634,8 @@ hexdump -C example1.zng example2.zng
 cat example1.zng example2.zng example2.zng example1.zng example2.zng | zq -
 ```
 > Note `ff` end-of-stream marker.
+
+## ZST is Self-organizing
 
 Armed with the type context, we can create ZST files where the columnar
 layout is
