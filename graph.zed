@@ -1,0 +1,10 @@
+filter _path=="conn" OR _path=="ssl"
+| summarize
+    count(_path=="conn"),
+    maxConnTime:=max(duration),
+    maxConnBytes:=max(orig_bytes+resp_bytes),
+    totConnBytes:=sum(orig_bytes+resp_bytes),
+    totConnTime:=sum(duration),
+    badSSL:=or(!(validation_status=="ok" OR validation_status==" " OR
+                validation_status=="" OR validation_status==null))
+   by id.resp_h,id.orig_h
