@@ -43,13 +43,19 @@ data lake for cloud storage -- called a
 --- providing time travel, live ingest, search indexes, and
 transactionally consistent views across distributed workers.
 
-> Heads up and joke about video... screen may lag voice.
-
-## Introduction
+## Setup
 
 > Feel free to follow along at [github.com/brimdata/sharkfest-21](https://github.com/brimdata/sharkfest-21)
 
-> Drag pcap to start the import...
+> Drag [demo.pcap](https://storage.googleapis.com/brim-public-test-data/demo.pcap)
+> into the Brim app to start the import...
+>
+> Thanks to Erik Hjelmvik of Netresec for granting permission to distribute
+> this pcap, and thanks also to his employer FM CERT at the time it was created.
+
+> Heads up and joke about video... screen may lag behind voice.
+
+## Introduction
 
 * Some ancient history: PCAP, BPF, tcpdump
 * Ten years ago: [Stanford Sharkfest '11](https://sharkfestus.wireshark.org/sf11) and Riverbed
