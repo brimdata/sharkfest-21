@@ -104,7 +104,7 @@ Zed and Brim have become our _research vehicle_ for exploring the data model..
     * [github.com/brimdata/brim](https://github.com/brimdata/brim)
     * [github.com/brimdata/zed](https://github.com/brimdata/zed)
 * Search-like experience optimized for Zeek and Suricata
-    * [Zeek](https://zeek.org/) - maps packets to contectual logs
+    * [Zeek](https://zeek.org/) - maps packets to contextual logs
     * [Suricata](https://suricata.io/) - threat detections engine
 * (quick demo of pcap drag into Brim)
 
@@ -310,7 +310,7 @@ We have taken a very modular, "composable tools" approach
     * bite-sized chunks for learning the system
     * most functionality exposed through service API
 
-Like the `docker` command, everything packaged under the `zed` command.
+Like the `docker` command, everything is packaged under the `zed` command.
 
 Here are a just few:
 
@@ -458,8 +458,8 @@ zq -z junk.zson >> pile.zson
 
 Ok, let's get this file to Brim.
 
-Instead of dragging it in, we'll go though the API with `zapi`.
-> Remember there is `zed lake serve` process running to support Brim.
+Instead of dragging it in, we'll go through the API with `zapi`.
+> Remember there is a `zed lake serve` process running to support Brim.
 
 ```
 zapi create PileOfStuff
@@ -475,7 +475,7 @@ Brim doesn't really know what to make of it.
 
 But we can query it in Brim...
 
-> Since I was told no one wants and new query language and I should use SQL,
+> Since I was told no one wants a new query language and I should use SQL,
 > we made Zed a superset of SQL...
 
 ```
@@ -561,7 +561,7 @@ sample uid
 sample query
 sample id.orig_h
 ```
-But if we go back the top level, we could see what the data would look like
+But if we go back to the top level, we could see what the data would look like
 if we tried to fuse the shapes all into one uber schema using the `fuse` operator...
 ```
 sample | fuse
@@ -581,7 +581,7 @@ document model.
 
 ## But ZSON is Slow
 
-Ok, this separate of policy and mechanism argument sounds great, but how can
+Ok, this separation of policy and mechanism argument sounds great, but how can
 you make this ZSON text format efficient?
 
 Like JSON, text-based ZSON is horribly inefficient.
@@ -682,7 +682,7 @@ There you have it... the Zed format family
 They are all perfectly compatible because they all adhere to the same
 data model: no loss of information transcoding between formats.
 
-ZNG typically 5-10X smaller than ZSON/JSON...
+ZNG is typically 5-10X smaller than ZSON/JSON...
 ```
 zapi query "from demo.pcap" > demo.zng
 zq -f ndjson demo.zng > demo.ndjson
@@ -765,7 +765,7 @@ zq badguys.zson
 ```
 And you wanted to decorate your logs that had an IP in this list.
 
-First we put the badguys list in it's own pool...
+First we put the badguys list in its own pool...
 ```
 zapi create BadGuys
 zapi use BagGuys@main
@@ -792,9 +792,9 @@ and narrow it down to the new records with a simple search...
 zapi query "count() by _path | badguy"
 ```
 
-> Check app and see that it's not there because it's not in main.
+> Check the app and see that it's not there because it's not in main.
 
-Okay, it's looks good so merge branch `test` into `main`!
+Okay, it looks good so merge branch `test` into `main`!
 ```
 zapi merge main
 ```
