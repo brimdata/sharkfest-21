@@ -1,6 +1,6 @@
 from (
-  demo.pcap => sort id.resp_h ;
-  BadGuys => sort addr ;
+  demo.pcap@main => sort id.resp_h ;
+  BadGuys@main => sort addr ;
 )
 | inner join on id.resp_h=addr badguy:=true
 | _path:=has(_path) ? "badguy:"+_path : "badguy"

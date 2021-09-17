@@ -805,6 +805,14 @@ zapi revert <cut-and-paste-commit-id>
 
 > Now search for "badguy" in app... it's gone!
 
+The data is still there.  It just was removed by a commit to the log.
+
+So if we grab the old commit ID, we can still see the old data...
+```
+zapi log
+zapi query "from demo.pcap@<id> | badguy | head 10"
+```
+
 ### Live Ingest
 
 A main/live branching model for streaming pipelines... work in progress.
@@ -835,6 +843,8 @@ We have a ways to go, but we hope someday that...
 **_Zed will do for data lakes what JSON did for APIs._**
 
 ---
+
+It's hard to make things easy...
 
 Do you buy it?  [Dimitri Does!](https://www.youtube.com/watch?v=hOQfp41nqp8)
 
