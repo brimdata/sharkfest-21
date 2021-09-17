@@ -803,6 +803,16 @@ zapi log
 ```
 > Now check the app and see the records...
 
+Now suppose, oops, you didn't want to merge that to main after all.
+
+No problem!
+```
+zapi log
+zapi revert <cut-and-paste-commit-id>
+```
+
+> Now search for "badguy" in app... it's gone!
+
 ### Live Ingest
 
 A main/live branching model for streaming pipelines... work in progress.
