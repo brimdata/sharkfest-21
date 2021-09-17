@@ -777,6 +777,7 @@ Now we can do a join with the logs, but let's test it first on a branch.
 ```
 cat join-badguys.zed
 
+zapi use demo.pcap@main
 zapi branch test
 zapi use test
 zapi query -I join-badguys.zed | zapi load -
@@ -797,6 +798,8 @@ zapi query "count() by _path | badguy"
 Okay, it looks good so merge branch `test` into `main`!
 ```
 zapi merge main
+zapi use main
+zapi log
 ```
 > New check app and see the records...
 
