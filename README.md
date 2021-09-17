@@ -801,7 +801,7 @@ zapi merge main
 zapi use main
 zapi log
 ```
-> New check app and see the records...
+> Now check the app and see the records...
 
 ### Live Ingest
 
