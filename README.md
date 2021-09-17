@@ -149,14 +149,6 @@ While the PCAP is loading, here is the wiring behind the scenes...
 
 ## Our Team
 
-We realized there was a bigger problem to solve and went into research mode...
-
-* Not a typical startup
-* A multi-year, research effort
-* _Creation of_ open-source project rather than its _commercialization_
-
-We are now transitioning from research mode to execution...
-
 #### Front end
 * James Kerr
 * Mason Fish
