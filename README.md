@@ -1,6 +1,6 @@
 # The [Zed Project](https://github.com/brimdata/zed): Stumbling Upon a [New Data Model](https://github.com/brimdata/zed/blob/main/docs/formats/zson.md) while [Hacking on Packets](https://github.com/brimdata/brimcap)
 
-> This README comprises a presentation given by Steve McCanne at Sharkfest '21,
+> This README comprises a [presentation](https://www.youtube.com/watch?v=3eHiZ6omzsE) given by Steve McCanne at Sharkfest '21,
 > 8-9am on September 17, 2021.  You can reproduce all the examples
 > herein from the tools referenced and files in this repo.
 > This is Part 2 of
@@ -35,7 +35,7 @@ unify the document model of JSON with the relational model of databases --
 where our ultimate goal is to converge search, analytics, and ETL.
 I will then discuss how we've leveraged the Zed data model
 in a new query engine that operates over Zed data instead of JSON objects
-or relational tables, and admits and a new query language that is a superset
+or relational tables, and admits a new query language that is a superset
 of SQL and log-search style languages.  Finally, I'll outline our
 _"work in progress"_ adapting the Zed system to a [Git-like](https://git-scm.com/)
 data lake for cloud storage -- called a
