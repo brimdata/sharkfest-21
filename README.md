@@ -852,7 +852,7 @@ Do you buy it?  [Dimitri Does!](https://www.youtube.com/watch?v=hOQfp41nqp8)
 
 If you're interested, please connect with us online
 
-* [Brim public slack](https://www.brimsecurity.com/join-slack/)
+* [Brim public slack](https://www.brimdata.io/join-slack/)
 * [Brim twitter](https://twitter.com/brimsecurity)
 * [github.com/brimdata/brim](https://github.com/brimdata/brim)
 * [github.com/brimdata/zed](https://github.com/brimdata/zed)
